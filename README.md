@@ -44,15 +44,16 @@ Requires Authentication
 
 Expects an object with the following key constraints
 
-name	        type	    required
-title	        String	    Yes
-date	        String	    Yes
-description	    String	    Yes
+|name	        |type	    |required|
+|---------------|-----------|--------|
+|`title`	    |String	    |Yes     |
+|`date`	        |String	    |Yes     |
+|`description`	|String	    |Yes     |
 
 
 
-|Method	   |Endpoint	                      |   Description                         |
-|----------|----------------------------------|---------------------------------------|
+|Method	     |Endpoint	                        |   Description                         |
+|------------|----------------------------------|---------------------------------------|
 |`GET`       |/api/event/:id/signUp             |  Returns a list of all items for event|
 |`GET `      |/api/event/:id/signUp/:id         |  Returns a specific item by id        |
 |`POST`      |/api/event/:id/signUp/:id/signUp  |  Creates an item with a specific id   |  
@@ -61,7 +62,8 @@ description	    String	    Yes
 
 Expects an object with the following key constraints
 
-name	        type	    required
-name	        String	    Yes
-item	        String	    Yes
-quantity	    String	    No
+|name	        |type	    |required|
+|---------------|-----------|--------|
+|`name`	        |String	    |Yes     |
+|`item`	        |String	    |Yes     |
+|`quantity`	    |String	    |No      |
