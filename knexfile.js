@@ -5,4 +5,10 @@ module.exports = {
             filename: './data/potluck.db3', 
         },
     },
+    migrations: {
+        directory: './data/migrations',
+      },
+      seeds: {
+        directory: './data/seeds',
+      },
 };
