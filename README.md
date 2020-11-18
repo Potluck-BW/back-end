@@ -6,8 +6,8 @@ Expects an object with the following key constraints
 
 
 | name        | type   | required | Unique |
-| ------------| ------ | -------- | ------ | 
-| `username`  | String | Yes      | Yes    | 
+| ------------| ------ | -------- | ------ |
+| `username`  | String | Yes      | Yes    |
 | `password`  | string | Yes      | No     |
 
 Possible status codes:
@@ -21,10 +21,10 @@ POST /api/auth/login
 Expects an object with the following key constraints
 
 
-| name        | type   | required | 
-| ------------| ------ | -------- | 
-| `username`  | String | Yes      | 
-| `password`  | string | Yes      | 
+| name        | type   | required |
+| ------------| ------ | -------- |
+| `username`  | String | Yes      |
+| `password`  | string | Yes      |
 
 Possible status codes:
 200 Welcome ${user.username}
@@ -67,3 +67,4 @@ Expects an object with the following key constraints
 |`name`	        |String	    |Yes     |
 |`item`	        |String	    |Yes     |
 |`quantity`	    |String	    |No      |
+>>>>>>> main
