@@ -3,7 +3,7 @@ const helmet = require("helmet")
 // const cookieParser = require('cookie-parser');
 const cors = require("cors")
 const session = require("express-session")
-const usersRouter = require("./users/users-router")
+const usersRouter = require("./user/users-router")
 
 
 
@@ -16,7 +16,7 @@ server.use(cors());
 
 
 server.use(userRouter);
-// for the web token restricts session 
+// for the web token restricts session
 server.use('//',);
 
 
