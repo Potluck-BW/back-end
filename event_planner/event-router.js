@@ -5,7 +5,7 @@ const restrict = require("../user/users-middleware");
 const router = express.Router()
 
 //GET all events
-router.get("/api/event",restrict(), async (req, res, next) => {
+router.get("/event",restrict(), async (req, res, next) => {
 	try {
         res.json(await db.find())
 	} catch(err) {
@@ -14,7 +14,7 @@ router.get("/api/event",restrict(), async (req, res, next) => {
 })
 
 //GET a event by id
-router.get("/api/event/:id",restrict(), async (req, res, next) => {
+router.get("/event/:id",restrict(), async (req, res, next) => {
 	try {
 		const event = await db.findById(req.params.id)
 		if (!event) {
@@ -23,14 +23,14 @@ router.get("/api/event/:id",restrict(), async (req, res, next) => {
 			})
 		}
 
-		res.json(stori)
+		res.json(event)
 	} catch(err) {
 		next(err)
 	}
 })
 
 //GET events by user id
-router.get("/api/event/:id/event",restrict(), async (req, res, next) => {
+router.get("/event/:id/event",restrict(), async (req, res, next) => {
 	try {
 		const event = await db.findByEventId(req.params.id)
 		if (!event) {
@@ -46,7 +46,7 @@ router.get("/api/event/:id/event",restrict(), async (req, res, next) => {
 })
 
 //Post
-router.post("/api/event/:id/event",restrict(), async (req, res, next) => {
+router.post("/event/:id/event",restrict(), async (req, res, next) => {
 	try {
         const event = await db.addEvent(req.body)
         res.status(201).json(event)
@@ -57,7 +57,7 @@ router.post("/api/event/:id/event",restrict(), async (req, res, next) => {
 })
 
 //PUT
-router.put("/api/event/:id",restrict(), async (req, res, next) => {
+router.put("/event/:id",restrict(), async (req, res, next) => {
 	try {
 		const {id} = req.params
 		const newEvent = { ...req.body }
@@ -72,7 +72,7 @@ router.put("/api/event/:id",restrict(), async (req, res, next) => {
 })
 
 //delete
-router.delete("/api/event/:id",restrict(), async (req, res, next) => {
+router.delete("/event/:id",restrict(), async (req, res, next) => {
 	try {
 		const { id } = req.params
 		

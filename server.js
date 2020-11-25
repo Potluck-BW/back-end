@@ -1,34 +1,25 @@
-const express = require("express")
-const helmet = require("helmet")
-// const cookieParser = require('cookie-parser');
-const server = express()
-const cors = require("cors")
-const session = require("express-session")
-const usersRouter = require("./user/users-router")
+const express = require('express');
+const cors = require('cors');
+const helmet = require('helmet');
 
+const usersRouter = require('./user/users-router');
+const eventRouter = require('./event_planner/event-router');
 
+const server = express();
 
-
-server.use(express.json());
 server.use(helmet());
 server.use(cors());
-// server.use(cookieParser());
+server.use(express.json());
 
 
-
+server.use(eventRouter);
 server.use(usersRouter);
-// for the web token restricts session
-// server.use('/',);
-
-
-
 
 server.use((err, req, res, next) => {
-	console.log(err)
-
+	console.log(err)	
 	res.status(500).json({
 		message: "Something went wrong",
 	})
 })
 
-module.exports = server
+module.exports = server;

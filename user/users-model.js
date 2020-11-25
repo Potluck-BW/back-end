@@ -5,6 +5,11 @@ async function add(user) {
   return findById(id);
 }
 
+function getUsers(){
+  return db('users')
+  .select('id', 'username')
+}
+
 function find() {
   return db("users").select("id", "username");
 }
@@ -24,6 +29,7 @@ function findById(id) {
 
 module.exports = {
   add,
+  getUsers,
   find,
   findBy,
   findById
