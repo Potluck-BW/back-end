@@ -4,8 +4,9 @@ const jwt = require("jsonwebtoken");
 const Users = require("./users-model");
 const secrets = require("./secret")
 
-router.get('/', (req, res) => {
-  res.send(`<h2>Up and Running!</h2>`)
+router.get('/', (req, res, next) => {
+  res.send(`<h2>Up and Running!</h2>`);
+  next()
 })
 
 router.post("/register", async (req, res, next) => {
