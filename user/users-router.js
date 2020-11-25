@@ -8,8 +8,6 @@ router.get('/test', (req, res, next) => {
   res.status(201).json({success: true})
 })
 
-
-
 router.post("/register", async (req, res, next) => {
   try {
     const { username, password } = req.body;
