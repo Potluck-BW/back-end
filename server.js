@@ -11,9 +11,6 @@ server.use(express.json());
 server.use(eventRouter);
 server.use(usersRouter);
 
-server.get('/', (req, res) => {
-	res.send(`<h2>API UP!</h2>`);
-  });
 
 server.use((err, req, res, next) => {
 	console.log(err)	

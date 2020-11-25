@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const Users = require("./users-model");
 const secrets = require("./secret")
 
-router.get('/test', (req, res, next) => {
+router.get('/', (req, res, next) => {
   res.status(201).json({success: true})
 })
 
